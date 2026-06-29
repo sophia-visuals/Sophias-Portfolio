@@ -1,0 +1,330 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  width: 100%;
+  min-height: 100%;
+  background: #000;
+  font-family: "Arial Black", Arial, sans-serif;
+  font-weight: 800;
+}
+body.no-scroll {
+  overflow: hidden;
+}
+/* ========================
+   MENU
+======================== */
+.wave-menu {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+.wave-menu a {
+  position: absolute;
+  color: #ff5100;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+.wave-menu a:hover {
+  transform: scale(1.15);
+  color: #ff7733;
+}
+/* ========================
+   BLOBS
+======================== */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  background: #ff5c00;
+  opacity: 0.6;
+  filter: blur(40px);
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+.blob1 { width: 160px; height: 160px; top: 10%; left: 10%; }
+.blob2 { width: 80px; height: 80px; top: 50%; left: 60%; }
+.blob3 { width: 150px; height: 150px; top: 20%; left: 75%; }
+.blob4 { width: 160px; height: 160px; top: 70%; left: 20%; }
+.blob5 { width: 90px; height: 90px; top: 30%; left: 40%; }
+.blob6 { width: 110px; height: 110px; top: 80%; left: 80%; }
+.blob7 { width: 70px; height: 70px; top: 15%; left: 50%; }
+.blob8 { width: 100px; height: 100px; top: 60%; left: 30%; }
+
+p {
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  text-align: left;
+  max-width: 65ch;
+  line-height: 1.5;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.site-title {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  z-index: 10;
+}
+
+/* ========================
+   PROJECT PAGES
+======================== */
+.project-page {
+  position: fixed;
+  inset: 0;
+  background: var(--page-bg, #fff);
+  z-index: 10000;
+  display: none;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 10px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-y: auto;
+}
+.project-page.visible {
+  display: flex;
+}
+/* individual overrides (Farben pro Seite) */
+.project-page.p1 {
+  --page-bg: #ffffff;
+  --page-text: #000;
+  --page-text-muted: #000000;
+}
+
+/* Abstand zwischen Text und erstem Bild (kleiner) */
+.project-page p + img,
+.project-page p + video {
+  margin-top: 1rem;
+}
+
+/* Abstand zwischen erstem und zweitem Bild (größer) */
+.project-page img + img {
+  margin-top: 4rem;
+}
+
+.project-page.p2 {
+  --page-bg: #fff;
+  --page-text: #000;
+  --page-text-muted: #000000;
+}
+.project-page.p3 {
+  --page-bg: #000;
+  --page-text: #fff;
+  --page-text-muted: #ffffff;
+}
+.project-page.p4 {
+  --page-bg: #000;
+  --page-text: #fff;
+  --page-text-muted: #ffffff;
+}
+.project-page.p5 {
+  --page-bg: #000;
+  --page-text: #fff;
+  --page-text-muted:#ffffff;
+  }
+/* Begrenzt und zentriert den restlichen Inhalt */
+.project-page > *:not(.back-btn) {
+  max-width: 800px;
+  width: 100%;
+}
+/* Text */
+.project-page h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: -4px;
+  line-height: 0.8;
+  text-align: center;
+  color: var(--page-text, #000);
+}
+.project-page h2 {
+  font-size: 6rem;
+  text-transform: uppercase;
+  letter-spacing: -4px;
+  line-height: 0.8;
+  text-align: center;
+  color: var(--page-text, #000);
+}
+.project-page p {
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  color: var(--page-text-muted, #333);
+  text-align: center;
+}
+/* Image */
+.page1-image {
+  display: block;
+  margin: 20px 0;
+  max-width: 100%;
+  height: auto;
+}
+
+.portfolio-title h3 {
+  color: rgba(255, 255, 255, 1); /* falls weißer Text */
+  padding: 10px;
+  text-transform: uppercase;
+}
+
+/* Back Button */
+.back-btn {
+  font-family: "Arial Black", Arial, sans-serif;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: #ff5100;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  transition: 0.2s;
+}
+.back-btn:hover {
+  background: rgba(255, 81, 0, 0.8);
+  color: #fff;
+}
+.slotvideo {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  display: block;
+}
+
+/* ========================
+   TOGGLE ALT/NEU + SUB BUTTONS
+======================== */
+.toggle-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.toggle-buttons {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.toggle-btn {
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.toggle-btn:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.toggle-btn.selected {
+  background-color: #fff;
+  color: #000;
+  border-color: #fff;
+}
+
+.sub-buttons {
+  display: none;
+  align-items: center;
+  gap: 15px;
+  position: absolute;
+  left: calc(100% + 15px);
+  top: 50%;
+  transform: translateY(-50%);
+  white-space: nowrap;
+}
+
+.sub-buttons.visible {
+  display: flex;
+}
+
+.sub-btn {
+  width: 40px;
+  height: 40px;
+  font-size: 12px;
+}
+
+/* ========================
+   IMAGES
+======================== */
+.img-alte-website,
+.img-neue-website {
+  margin-top: 30px;
+  max-width: 100%;
+  display: none;
+}
+
+.img-alte-website.active,
+.img-neue-website.active {
+  display: block;
+}
+
+.img-sub {
+  margin-top: 30px;
+  max-width: 100%;
+  display: none;
+}
+
+.img-sub.active {
+  display: block;
+}
+
+.video-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 800px;
+}
+.vid-play-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #ff5100;
+  padding: 0;
+  line-height: 1;
+}
+.vid-progress-bar {
+  flex: 1;
+  height: 4px;
+  background: #ddd;
+  border-radius: 999px;
+  cursor: pointer;
+  position: relative;
+}
+.vid-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: #ff5100;
+  border-radius: 999px;
+  pointer-events: none;
+}
+.vid-time {
+  font-family: Arial, sans-serif;
+  font-size: 0.8rem;
+  color: #333;
+  white-space: nowrap;
+}
