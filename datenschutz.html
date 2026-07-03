@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Datenschutz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="legal-page">
+  <a href="index.html" class="back-btn">← HOME</a>
+  <div class="legal-content">
+    <h2>Datenschutz</h2>
+    <p>Hier entsteht in Kürze die Datenschutzerklärung.</p>
+  </div>
+  <script>
+    const backBtn = document.querySelector('.back-btn');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 10) {
+        backBtn.classList.add('scrolled');
+      } else {
+        backBtn.classList.remove('scrolled');
+      }
+    });
+  </script>
+</body>
+</html>
